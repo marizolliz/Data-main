@@ -78,14 +78,6 @@ def analyze_data(data):
     st.write(f"Totales por PROVINCIA, AREA_ASEG_(Has), MONTO_INDN(S) y NUM_PROD _BENIF para {selected_year}-{selected_year + 1}")
     st.write(summary_by_provincia.fillna("VARIABLE NO ENCONTRADA"))
 
-        # Group by "PROVINCIA" and "NOM_CULTIVO" and sum "MONTO_INDN(S)" for each combination for the selected year
-    summary_table = data[data["AÑO"] == selected_year].groupby(['PROVINCIA', 'NOM_CULTIVO']).agg({'MONTO_INDN(S)': 'sum'}).reset_index()
-    summary_table = summary_table.pivot(index='PROVINCIA', columns='NOM_CULTIVO', values='MONTO_INDN(S)').reset_index()
-
-    # Display the consolidated montos indemnizados for the selected year with handling for missing variables
-    st.write(f"REGION DE PUNO: CONSOLIDADO DEL MONTO INDEMNIZADO POR PROVINCIA Y CULTIVO para {selected_year}-{selected_year + 1}")
-    st.write(summary_table.fillna("N/A"))
-
     st.write("### Seleccione columnas para hacer su conjunto de datos para análisis")
     all_columns = data.columns.tolist()
     options_key = "_".join(all_columns)
