@@ -1,5 +1,7 @@
 import streamlit as st
 import pandas as pd
+import pip
+pip.main(["install","openpyxl"])
 import plotly.express as px
 from PIL import Image
 import requests
