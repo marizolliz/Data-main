@@ -3,8 +3,6 @@ import pandas as pd
 import plotly.express as px
 from PIL import Image
 import requests
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LinearRegression
 import os
 import numpy as np
 import statsmodels.api as sm
